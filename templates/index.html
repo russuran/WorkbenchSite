@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
@@ -72,10 +72,18 @@
     </div>
   </div>
 </nav>
+<div class="mx-auto" style="width: 200px;">
 
-<div class="mx-auto" style="width: 200px;"></div>
-
+</div>
 <div class="row">
+  <div class="container-fluid">
+    <!-- Control the column width, and how they should appear on different devices -->
+    <div class="row">
+      <div class="col-sm-6" style="background-color:orange;"></div>
+      <div class="col-sm-6" style="background-color:orange;"></div>
+    </div>
+    <br>
+  </div>
   <div class="col-md-3">
   <div class="accordion" id="accordionExample">
     <div class="card">
@@ -138,6 +146,15 @@
       </div>
     </div>
    </div>
+   </div>
+   <div class="col-md-3">
+     <div class="card">
+      <img src="static/images/bot.jpg" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>КОТ НЕДОРОГО</b></h4>
+        <p>КуСаЕтСя</p>
+      </div>
+    </div>
    </div>
 </div>
 
