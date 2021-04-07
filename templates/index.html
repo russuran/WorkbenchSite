@@ -12,9 +12,10 @@
 
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Workbench</a>
+    <a class="navbar-brand" href="/index">Workbench</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -43,8 +44,8 @@
               <button type="submit" class="btn btn-primary">Войти</button>
             </form>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Новенький? Регистрация</a>
-            <a class="dropdown-item" href="#">Забыли пароль?</a>
+            <a class="dropdown-item" href="/register">Новенький? Регистрация</a>
+            <a class="dropdown-item" href="/refresh">Забыли пароль?</a>
 
           </ul>
         </li>
@@ -66,96 +67,16 @@
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control mr-2" type="search" placeholder="Ищем товары..." aria-label="Ищем товары...">
+        <input class="form-control mr-2" style="width: 400px;" type="search" placeholder="Ищем товары..." aria-label="Ищем товары...">
         <button class="btn btn-outline-success" type="submit">Поиск</button>
       </form>
     </div>
   </div>
 </nav>
-<div class="mx-auto" style="width: 200px;">
 
-</div>
-<div class="row">
-  <div class="container-fluid">
-    <!-- Control the column width, and how they should appear on different devices -->
-    <div class="row">
-      <div class="col-sm-6" style="background-color:orange;"></div>
-      <div class="col-sm-6" style="background-color:orange;"></div>
-    </div>
-    <br>
-  </div>
-  <div class="col-md-3">
-  <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            Техника
-          </button>
-        </h5>
-      </div>
-
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
-          <div class="btn-group dropright">
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Компьютерная техника
-            </button>
-            <div class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"><b>Компьютеры, ноутбуки и ПО</b></a></li>
-              <div class="dropdown-divider"></div>
-                <div>
-                  <li><a class="dropdown-item" href="#">    Cистемные блоки</a></li>
-                  <li><a class="dropdown-item" href="#">    Моноблоки</a></li>
-                  <li><a class="dropdown-item" href="#">    Ноутбуки</a></li>
-                </div>
-              <div class="dropdown-divider"></div>
-              <li><a class="dropdown-item" href="#"><b>Комплектующие для ПК</b></a></li>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Дом и зоотовары
-          </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <div class="card-body">
-          Кошки и Коты
-          Собаки и суки
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Всё для детей
-          </button>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-        <div class="card-body">
-          Игрушки и тп!
-        </div>
-      </div>
-    </div>
-   </div>
-   </div>
-   <div class="col-md-3">
-     <div class="card">
-      <img src="static/images/bot.jpg" alt="Avatar" style="width:100%">
-      <div class="container">
-        <h4><b>КОТ НЕДОРОГО</b></h4>
-        <p>КуСаЕтСя</p>
-      </div>
-    </div>
-   </div>
+<!-- Begin page content -->
+<div>
+    {% block content %}{% endblock %}
 </div>
 
 </body>
