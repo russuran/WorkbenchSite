@@ -1,7 +1,7 @@
 from flask import Flask
 from data import db_session
 from data.cards import Card
-from data.users import User
+
 
 
 app = Flask(__name__)
@@ -9,16 +9,17 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
 def main():
-    db_session.global_init("db/users.db")
+    db_session.global_init("db/cards.db")
     db_sess = db_session.create_session()
-    user = User()
+    card = Card()
 
-    user.name = "admin"
-    user.about = "admin"
-    user.email = "a@a.a"
-    user.hashed_password = "123"
+    card.title = "Худи Omegaaaasdkeklsul"
+    card.content = "Хлопок"
+    card.price = "1700"
+    card.filename = "static/images/bot.jpg"
+    card.key_words = "одежда"
 
-    db_sess.add(user)
+    db_sess.add(card)
     db_sess.commit()
 
     app.run()

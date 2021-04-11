@@ -1,4 +1,5 @@
 {% extends "index.html" %}
+
 {% block content %}
 <div class="row">
   <div class="container-fluid">
@@ -77,7 +78,7 @@
       <img src="{{item.filename}}" alt="Avatar" style="width:100%">
       <div class="container">
         <h4><b>{{item.title}}</b></h4>
-        <p>{{ item.content[20:] }}</p>
+        <p>{{ item.content }}</p>
         <p>{{ item.price }}</p>
       </div>
     </div>
