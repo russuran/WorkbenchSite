@@ -9,7 +9,7 @@ class Card(SqlAlchemyBase):
     __tablename__ = 'card'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
-                           primary_key=True, autoincrement=False)
+                           primary_key=True, autoincrement=True)
 
     title = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
@@ -17,9 +17,6 @@ class Card(SqlAlchemyBase):
 
     price = sqlalchemy.Column(sqlalchemy.Integer, autoincrement=False)
 
+    filename = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
     key_words = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-
-    photo = sqlalchemy.Column(sqlalchemy.LargeBinary, nullable=True)
-
-    created_date = sqlalchemy.Column(sqlalchemy.DateTime,
-                                     default=datetime.datetime.now)

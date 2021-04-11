@@ -71,14 +71,17 @@
     </div>
    </div>
    </div>
+   {% for item in cards%}
    <div class="col-md-3">
      <div class="card">
-      <img src="static/images/bot.jpg" alt="Avatar" style="width:100%">
+      <img src="{{item.filename}}" alt="Avatar" style="width:100%">
       <div class="container">
-        <h4><b>КОТ НЕДОРОГО</b></h4>
-        <p>КуСаЕтСя</p>
+        <h4><b>{{item.title}}</b></h4>
+        <p>{{ item.content[20:] }}</p>
+        <p>{{ item.price }}</p>
       </div>
     </div>
    </div>
+   {% endfor %}
 </div>
 {% endblock %}
