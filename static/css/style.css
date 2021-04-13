@@ -12,10 +12,6 @@
     padding: 100px 106px;
 }
 
-.img {
-    border-radius: 5px 5px 0 0;
-}
-
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -34,11 +30,11 @@
 }
 
 form.login_form {
-    margin-left: auto !impotant;
-    margin-right: auto !impotant;
-    max-width: 450px !impotant;
-    background-color: #ffcc00 !impotant;
-    border: 1px solid gray !impotant;
-    border-radius: 5px !impotant;
-    padding: 10px !impotant;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #ffcc00;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
 }
