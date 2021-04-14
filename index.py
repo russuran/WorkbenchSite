@@ -24,9 +24,12 @@ def main():
 
 @app.route('/product/<id>')
 def product(id):
+    db_session.global_init("db/cards.db")
+    db_sess = db_session.create_session()
+    data = db_sess.query(Card).filter(Card.id == id).first()
+    return render_template('product.html', data=data)
 
 
-    return render_template('product_id.html', data=current_card)
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = db_session.create_session()
