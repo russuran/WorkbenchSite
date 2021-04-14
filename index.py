@@ -4,7 +4,7 @@ from data.cards import Card
 from data.users import User
 from data import db_session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-
+from random import shuffle
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'OmaewaMouShindeeru'
@@ -20,10 +20,13 @@ def main():
     db_sess = db_session.create_session()
     card = db_sess.query(Card)
 
-
     return render_template('shoppings.html', cards=card)
 
+@app.route('/product/<id>')
+def product(id):
 
+
+    return render_template('product_id.html', data=current_card)
 @login_manager.user_loader
 def load_user(user_id):
     db_sess = db_session.create_session()
