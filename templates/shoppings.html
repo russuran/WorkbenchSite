@@ -273,7 +273,7 @@
        <div class="card-deck">
 
          <div class="card border-dark" style="width: 400px; margin-bottom: 10px;">
-          <img src="{{ url_for('static', filename=cards[i:i + 3][2].filename[6:]) }}" alt="Avatar" style="width:100%; margin-bottom: 10px;" width="400px" height="400px">
+          <img src="{{ url_for('static', filename=cards[i:i + 3][0].filename[6:]) }}" alt="Avatar" style="width:100%; margin-bottom: 10px;" width="400px" height="400px">
           <div class="card-body">
             <h4><b>{{cards[i:i + 3][0].title}}</b></h4>
           </div>
@@ -283,11 +283,11 @@
           <div class="card-body">
             <h3 class="card-text text-right">{{ cards[i:i + 3][0].price }}</h3>
           </div>
-         <div class="card-footer bg-transparent border-success"><a href="product/{{ cards[i:i + 3][2].id }}">перейти</a></div>
+         <div class="card-footer bg-transparent border-success"><a href="product/{{ cards[i:i + 3][0].id }}">перейти</a></div>
         </div>
 
       <div class="card border-dark" style="width: 400px; margin-bottom: 10px;">
-       <img src="{{ url_for('static', filename=cards[i:i + 3][2].filename[6:]) }}" alt="Avatar" style="width:100%; margin-bottom: 10px;" width="400px" height="400px">
+       <img src="{{ url_for('static', filename=cards[i:i + 3][1].filename[6:]) }}" alt="Avatar" style="width:100%; margin-bottom: 10px;" width="400px" height="400px">
        <div class="card-body">
          <h4><b>{{cards[i:i + 3][1].title}}</b></h4>
        </div>
@@ -297,11 +297,11 @@
        <div class="card-body">
          <h3 class="card-text text-right">{{ cards[i:i + 3][1].price }}</h3>
        </div>
-      <div class="card-footer bg-transparent border-success"><a href="product/{{ cards[i:i + 3][2].id }}">перейти</a></div>
+      <div class="card-footer bg-transparent border-success"><a href="product/{{ cards[i:i + 3][1].id }}">перейти</a></div>
      </div>
 
      <div class="card border-dark" style="width: 400px; margin-bottom: 10px;">
-      <img src="{{ url_for('static', filename=cards[i:i + 3][2].filename[6:]) }}" alt="Avatar" style="width:100%; margin-bottom: 10px;" width="400px" height="400px">
+      <img src="{{ cards[i:i + 3][2].filename }}" alt="Avatar" style="width:100%; margin-bottom: 10px;" width="400px" height="400px">
       <div class="card-body">
         <h4><b>{{cards[i:i + 3][2].title}}</b></h4>
       </div>

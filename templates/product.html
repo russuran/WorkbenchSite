@@ -3,13 +3,16 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-6" style="background-color:orange;"></div>
-    <div class="col-sm-6" style="background-color:orange;"></div>
+    <div class="col-sm-6" style="background-color:black;"></div>
+    <div class="col-sm-6" style="background-color:black;"></div>
   </div>
-  <br>
 </div>
   <div class="container">
     <h1 class="display-1 text-center">{{ data.title }}</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" style="background-color:black;"></div>
+    <div class="col-sm-6" style="background-color:black;"></div>
   </div>
   <div class="row">
     <div class="col-sm-6"></div>
@@ -18,10 +21,38 @@
   <div>
     <div>
     <div class="row">
-      <div class="col-8" style="margin-top: 35px;">
-          <img src="{{ url_for('static', filename=data.filename[6:]) }}" class="rounded mx-auto d-block" alt="КЛОУНАДА" width="700px" height="700px">
+      <div class="col" style="margin-top: 35px; width: 650px;">
+          <img src="{{ url_for('static', filename=data.filename[6:]) }}" class="rounded mx-auto d-block" alt="КЛОУНАДА" width="600px" height="600px">
       </div>
-      <div class="col-4">col-4</div>
+      <div class="col" style="width: 860px;">
+
+      <div class="container" style="width: 400; margin-top: 35px; margin-right: 100px;">
+
+    		<div class="row">
+    			<div class="col" style="width: 400px;">
+    				<div class="rating-block">
+    					<h4>Средний рейтинг</h4>
+    					<h2 class="bold padding-bottom-7">{{ data.rating }}<small>/ 5</small></h2>
+    					{% for i in range(data.rating) %}
+              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+    					  <span class="star" aria-hidden="true"></span>
+    					</button>
+              {% endfor %}
+
+              {% for i in range(5 -  data.rating) %}
+              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+    					  <span class="star" aria-hidden="true"></span>
+    					</button>
+              {% endfor %}
+    				</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			<div class="col" style="width: 400px;">
+    			</div>
+    		</div>
+        </div>
+      </div>
     </div>
   </div>
   </div>

@@ -26,3 +26,5 @@ class Card(SqlAlchemyBase):
     under_theme = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
     key_words = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
+    rating = sqlalchemy.Column(sqlalchemy.Integer, autoincrement=False)
