@@ -20,7 +20,8 @@ def main():
     db_sess = db_session.create_session()
     card = db_sess.query(Card)
 
-    return render_template('shoppings.html', cards=card)
+
+    return render_template('shoppings.html', cards=card, length=card.count())
 
 @app.route('/product/<id>')
 def product(id):

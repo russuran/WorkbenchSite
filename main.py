@@ -13,11 +13,14 @@ def main():
     db_sess = db_session.create_session()
     card = Card()
 
-    card.title = "Худи Omegaaaasdkeklsul"
-    card.content = "Хлопок"
-    card.price = "1700"
-    card.filename = "static/images/bot.jpg"
-    card.key_words = "одежда"
+    card.title = 'Доска (Дуб)'
+    card.content = "Качественная доска 5x1x0.3м"
+    card.price = "1400"
+    card.filename = "static/images/dub_wood.jpg"
+    card.theme = "Материалы"
+    card.under_theme = "Древесина"
+    card.material = "Дубовая"
+    card.key_words = "Доска"
 
     db_sess.add(card)
     db_sess.commit()

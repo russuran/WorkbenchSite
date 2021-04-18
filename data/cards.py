@@ -19,4 +19,10 @@ class Card(SqlAlchemyBase):
 
     filename = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
+    material = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
+    theme = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
+    under_theme = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+
     key_words = sqlalchemy.Column(sqlalchemy.String, nullable=True)
