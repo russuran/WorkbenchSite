@@ -1,6 +1,9 @@
 {% extends "index.html" %}
 
 {% block content %}
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/fav.png">
+</head>
 <div class="row">
   <div class="container-fluid">
     <div class="row">
@@ -305,7 +308,7 @@
      </div>
 
      <div class="card border-dark" style="width: 400px; height: 750px; margin-bottom: 10px;">
-      <img width="400px" height="400px"  src="{{ cards[i:i + 3][2].filename }}" alt="Avatar" style="width:100%;">
+      <img width="400px" height="400px"  src="{{ url_for('static', filename=cards[i:i + 3][2].filename[6:]) }}" alt="Avatar" style="width:100%;">
       <div class="card-body">
         <div class="card-body">
           <h4><b>{{cards[i:i + 3][2].title}}</b></h4>

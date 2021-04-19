@@ -1,7 +1,8 @@
-from flask import Flask, url_for, request, render_template, redirect
-from forms.loginform import LoginForm, RegisterForm
+from flask import Flask, url_for, request, render_template, redirect, make_response, jsonify
+from forms.loginform import LoginForm
 from data.cards import Card
 from data.users import User
+from forms.user import RegisterForm
 from data import db_session
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from random import shuffle
@@ -21,7 +22,6 @@ def index():
 
 @app.route('/main/<theme>/<under_theme>/<material>')
 def main(theme, under_theme, material):
-    print(type(theme), under_theme, material)
 
     db_session.global_init("db/cards.db")
     db_sess = db_session.create_session()
@@ -33,10 +33,11 @@ def main(theme, under_theme, material):
                                           Card.under_theme == under_theme,
                                           Card.material == material)
 
+
     return render_template('shoppings.html', cards=card, length=card.count())
 
-@app.route('/product/<id>')
-def product(id):
+@app.route('/main/<theme>/<under_theme>/product/<id>')
+def product(theme, under_theme, id):
     db_session.global_init("db/cards.db")
     db_sess = db_session.create_session()
     data = db_sess.query(Card).filter(Card.id == id).first()
@@ -53,8 +54,16 @@ def load_user(user_id):
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        return redirect('/')
-    return render_template('login.html', form=form)
+        db_session.global_init("db/cards.db")
+        db_sess = db_session.create_session()
+        user = db_sess.query(User).filter(User.email == form.email.data).first()
+        if user and user.check_password(form.password.data):
+            login_user(user, remember=form.remember_me.data)
+            return redirect("/main/a/a/a")
+        return render_template('login.html',
+                               message="Неправильный логин или пароль",
+                               form=form)
+    return render_template('login.html', title='Авторизация', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -81,9 +90,34 @@ def reqister():
         return redirect('/login')
     return render_template('register.html', title='Регистрация', form=form)
 
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
+
+
 @app.route('/about')
 def about():
     return render_template('about_us.html')
+
+
+@app.route('/support/<part>')
+def support(part):
+
+    return render_template('support.html')
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)
+
+
+@app.errorhandler(500)
+def not_found(error):
+    return make_response(jsonify({'error': 'Server Error'}), 500)
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')

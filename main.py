@@ -1,6 +1,7 @@
 from flask import Flask
 from data import db_session
 from data.cards import Card
+from data.users import User
 
 
 
@@ -11,19 +12,13 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 def main():
     db_session.global_init("db/cards.db")
     db_sess = db_session.create_session()
-    card = Card()
 
-    card.title = 'Доска (Дуб)'
-    card.content = "Качественная доска 5x1x0.3м"
-    card.price = "1400"
-    card.filename = "static/images/dub_wood.jpg"
-    card.theme = "Материалы"
-    card.under_theme = "asdasd"
-    card.material = "Дубовasdая"
-    card.key_words = "asd"
-    card.rating = "0"
-
-    db_sess.add(card)
+    user = User()
+    user.name = "r"
+    user.about = "r"
+    user.email = "rr@gmail.com"
+    user.password = "r"
+    db_sess.add(user)
     db_sess.commit()
 
     app.run()
