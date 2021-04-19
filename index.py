@@ -20,12 +20,18 @@ def index():
 
 
 @app.route('/main/<theme>/<under_theme>/<material>')
-def main(theme="a", under_theme="a", material="a"):
-    if theme == "a":
-        db_session.global_init("db/cards.db")
-        db_sess = db_session.create_session()
-        card = db_sess.query(Card)
+def main(theme, under_theme, material):
+    print(type(theme), under_theme, material)
 
+    db_session.global_init("db/cards.db")
+    db_sess = db_session.create_session()
+
+    if theme == "a":
+        card = db_sess.query(Card)
+    else:
+        card = db_sess.query(Card).filter(Card.theme == theme,
+                                          Card.under_theme == under_theme,
+                                          Card.material == material)
 
     return render_template('shoppings.html', cards=card, length=card.count())
 

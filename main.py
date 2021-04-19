@@ -18,39 +18,9 @@ def main():
     card.price = "1400"
     card.filename = "static/images/dub_wood.jpg"
     card.theme = "Материалы"
-    card.under_theme = "Древесина"
-    card.material = "Дубовая"
-    card.key_words = "Доска"
-    card.rating = "0"
-
-    db_sess.add(card)
-    db_sess.commit()
-
-    card = Card()
-
-    card.title = 'Лампа "CwB"'
-    card.content = "Если у вашего рабочего места не хватает света и вкуса, то эта лампа специально для вас!"
-    card.price = "2400"
-    card.filename = "static/images/lamp_table.jpg"
-    card.theme = "Декоративные предметы"
-    card.under_theme = "Лампы"
-    card.material = "Настольные"
-    card.key_words = "Лампа"
-    card.rating = "0"
-
-    db_sess.add(card)
-    db_sess.commit()
-
-    card = Card()
-
-    card.title = 'Лампа "BwC"'
-    card.content = "Вам нужен свет и стиль? ВОТ ОН!"
-    card.price = "3200"
-    card.filename = "static/images/lamp_wall.jpg"
-    card.theme = "Декоративные предметы"
-    card.under_theme = "Лампы"
-    card.material = "Настенные"
-    card.key_words = "Лампа"
+    card.under_theme = "asdasd"
+    card.material = "Дубовasdая"
+    card.key_words = "asd"
     card.rating = "0"
 
     db_sess.add(card)
