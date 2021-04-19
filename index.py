@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request, render_template
+from flask import Flask, url_for, request, render_template, redirect
 from forms.loginform import LoginForm, RegisterForm
 from data.cards import Card
 from data.users import User
@@ -14,11 +14,17 @@ login_manager.init_app(app)
 
 
 @app.route('/')
-@app.route('/ind')
-def main():
-    db_session.global_init("db/cards.db")
-    db_sess = db_session.create_session()
-    card = db_sess.query(Card)
+@app.route('/index')
+def index():
+    return redirect('/main/a/a/a')
+
+
+@app.route('/main/<theme>/<under_theme>/<material>')
+def main(theme="a", under_theme="a", material="a"):
+    if theme == "a":
+        db_session.global_init("db/cards.db")
+        db_sess = db_session.create_session()
+        card = db_sess.query(Card)
 
 
     return render_template('shoppings.html', cards=card, length=card.count())
